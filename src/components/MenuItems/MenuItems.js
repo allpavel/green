@@ -5,21 +5,38 @@ import Dropdown from "../Dropdown/Dropdown";
 
 const NavItem = styled.li`
     position: relative;
-    margin: 0 2rem;
-    font-size: 1rem;
-
+    margin: 1rem 1rem;
+    font-size: 0.8rem;
+ 
     a {
         display: block;
+        color: black;
+        text-transform: uppercase;
         text-decoration: none;
+        transition: all 0.5s ease;
     }
+
+    a:visited {
+        color: black;
+    }
+
+    a:hover {
+        color: #0abf19;
+    }
+
     button {
         color: inherit;
         font-size: inherit;
+        text-transform: uppercase;
         border: none;
         background-color: transparent;
         cursor: pointer;
-        width: 100%;
+        transition: all 0.5s ease;
     }
+    button:hover {
+        color: #0abf19;
+    }
+
 `;
 
 const Arrow = styled.span`

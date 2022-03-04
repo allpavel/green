@@ -2,19 +2,27 @@ import React from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import MenuItems from "../MenuItems/MenuItems";
+import TopBar from "../TopBar/TopBar";
 import { menuItems } from '../MenuItems/menuItemsList';
 
 const Wrapper = styled.header`
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    color: #212529;
+    width: 100%;
 `;
 
 const Content = styled.nav`
     display: flex;
     align-items: center;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
     height: 3rem;
+
+    @media screen and (max-width: 1500px) {
+        max-width: 1000px;
+    }
+
+    @media screen and (max-width: 1280px) {
+        max-width: 600px;
+    }
 `;
 
 const NavLinks = styled.ul`
@@ -29,6 +37,7 @@ const NavBar = () => {
     
     return (
         <Wrapper>
+            <TopBar />
             <Content>
                 <NavLinks>
                     {menuItems.map(menu => {
