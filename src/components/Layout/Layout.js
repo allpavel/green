@@ -5,6 +5,7 @@ import NavBar from "../NavBar/NavBar";
 const GlobalStyles = createGlobalStyle`
     :root {
         --main-color: #5cb874;
+        --additional-color: #edffef;
     }
 
     * {

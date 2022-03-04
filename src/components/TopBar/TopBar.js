@@ -7,7 +7,7 @@ const Wrapper = styled.section`
     align-items: center;
     justify-content: center;
     height: 2rem;
-    background-color: #edffef;
+    background-color: var(--additional-color);
     width: 100%;
 `;
 
