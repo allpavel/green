@@ -1,12 +1,15 @@
 export const menuItems = [
     {
         title: "Home",
+        url: '/'
     },
     {
         title: "About",
+        url: '/about'
     },
     {
         title: "Services",
+        url: '/services'
     },
     {
         title: "Dropdown",
@@ -38,5 +41,6 @@ export const menuItems = [
     },
     {
         title: "Contact",
+        url: '/contact'
     },
 ];

@@ -7,7 +7,7 @@ const NavItem = styled.li`
     position: relative;
     margin: 1rem 1rem;
     font-size: 0.8rem;
- 
+
     a {
         display: block;
         color: black;
@@ -16,11 +16,11 @@ const NavItem = styled.li`
         transition: all 0.5s ease;
     }
 
-    a:visited {
-        color: black;
+    a:hover {
+        color: #0abf19;
     }
 
-    a:hover {
+    .active {
         color: #0abf19;
     }
 
@@ -36,6 +36,7 @@ const NavItem = styled.li`
     button:hover {
         color: #0abf19;
     }
+
 
 `;
 
@@ -100,7 +101,7 @@ const MenuItems = ({ menu, depthLevel }) => {
                     <Dropdown submenus={menu.submenu} isDropdown={isDropdown} depthLevel={depthLevel} />
                 </>
             ) : (
-                <Link to={`/${menu.title.toLowerCase()}`}>{menu.title}</Link>
+                <Link to={`${menu.url}`} activeClassName="active">{menu.title}</Link>
             )}
         </NavItem>
     );
