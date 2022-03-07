@@ -33,7 +33,7 @@ const HeroText = styled.div`
 const Hero = () => {
     return (
         <HeroImage>
-            <StaticImage src="../../images/slide/slide1.jpg" alt="slide1" className="hero" />
+            <StaticImage src="../../images/slide/slide1.jpg" alt="slide1" />
 
             <HeroText>
                 <h1>Welcome to Green</h1>
