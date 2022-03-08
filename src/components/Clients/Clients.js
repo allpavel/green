@@ -1,44 +1,51 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, EffectFade, Pagination } from "swiper";
+import SwiperCore, { Autoplay, Pagination } from "swiper/core";
 import { StaticImage } from "gatsby-plugin-image";
-import slide1 from '../../images/slide/slide1.jpg';
-import slide2 from '../../images/slide/slide-2.jpg';
-import slide3 from '../../images/slide/slide-3.jpg';
-import "swiper/css";
-import "swiper/css/bundle";
+import styled from "styled-components";
+import "swiper/swiper-bundle.min.css";
 import "./Clients.css";
+
+const Wrapper = styled.section`
+    max-width: 1140px;
+    margin: 2rem auto;
+`;
+
+const Content = styled.div`
+    margin: 1rem 0;
+    text-align: center;
+
+    h2 {
+        text-transform: uppercase;
+        margin: 1rem auto;
+    }
+`;
+
+SwiperCore.use([Pagination, Autoplay]);
 
 const Clients = () => {
     return (
+        <Wrapper>
+            <Content>
+                <h2>Our clients</h2>
+                <p>
+                    From living which you'll give kind brought. Midst gathered. Heaven our very man of brought yielding
+                    sea fifth waters fruitful their day their him were, may air, bearing you'll. Fourth.
+                </p>
+            </Content>
             <Swiper
-            tag="section"
-                slidesPerView={2}
-                spaceBetween={20}
-                centeredSlides={true}
-                navigation={true}
+                tag="div"
+                loop={true}
                 pagination={{ clickable: true }}
-                effect={"fade"}
-                fadeEffect={{ crossFade: true }}
-                // autoplay={{ delay: 2000 }}
-                modules={[Navigation, Autoplay, EffectFade, Pagination]}
+                slidesPerView={4}
+                centeredSlides={true}
+                spaceBetween={100}
+                autoplay={{ delay: 1500, disableOnInteraction: false }}
             >
                 <SwiperSlide>
-                    <div className="image-slider">
-                        <img src={slide1} alt="" />
-                    </div>
+                    <StaticImage src="../../images/clients/client-1.png" alt="slide-1" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="image-slider">
-                        <img src={slide2} alt="" />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="image-slider">
-                        <img src={slide3} alt="" />
-                    </div>
-                </SwiperSlide>
-                {/* <SwiperSlide>
                     <StaticImage src="../../images/clients/client-2.png" alt="slide-2" />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -58,8 +65,9 @@ const Clients = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <StaticImage src="../../images/clients/client-8.png" alt="slide-8" />
-                </SwiperSlide> */}
+                </SwiperSlide>
             </Swiper>
+        </Wrapper>
     );
 };
 

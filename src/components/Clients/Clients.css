@@ -1,27 +1,13 @@
-.swiper {
-    max-width: 1140px;
-    margin: 3rem auto;
-}
-
-.swipper-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.image-slider {
-    text-align: center;
-}
-
-.image-slider img {
-    max-width: 100%;
+.swiper-container {
+    height: 9rem;
 }
 
 .swiper-pagination-bullet {
-    width: 1rem;
-    height: 1rem;
-    background-color: white;
+    width: .8rem;
+    height: .8rem;
+    background-color: black;
     opacity: 1;
-    font-size: 1rem;
+    font-size: .8rem;
 }
 
 .swiper-pagination-bullet-active {
@@ -32,6 +18,7 @@
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
+    z-index: 10;
     color:#00fc2a;
     font-size: 4rem;
 }
