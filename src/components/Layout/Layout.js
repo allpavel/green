@@ -1,10 +1,11 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 
 const GlobalStyles = createGlobalStyle`
     :root {
-        --main-color: #5cb874;
+        --main-color: rgba(92, 184, 116, 1);;
         --additional-color: #edffef;
     }
 
@@ -17,6 +18,8 @@ const GlobalStyles = createGlobalStyle`
     body, html {
         font-family: "Open Sans", sans-serif;
         height: 100%;
+        overflow-x: hidden;
+
     }
 `;
 
@@ -25,7 +28,8 @@ const Layout = ({ children }) => {
         <>
             <GlobalStyles />
             <NavBar />
-            {children}
+            <main>{children}</main>
+            <Footer />
         </>
     );
 };

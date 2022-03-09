@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
+import { MdMenu, MdClose } from "react-icons/md";
 import MenuItems from "../MenuItems/MenuItems";
 import TopBar from "../TopBar/TopBar";
-import { menuItems } from '../MenuItems/menuItemsList';
+import Logo from "../Logo/Logo";
+import { menuItems } from "../MenuItems/menuItemsList";
 
 const Wrapper = styled.header`
     width: 100%;
@@ -11,8 +13,9 @@ const Wrapper = styled.header`
 
 const Content = styled.nav`
     display: flex;
+    position: relative;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1140px;
     margin: 0 auto;
     height: 3rem;
 
@@ -21,7 +24,10 @@ const Content = styled.nav`
     }
 
     @media screen and (max-width: 1280px) {
-        max-width: 600px;
+        max-width: 900px;
+    }
+    @media screen and (max-width: 768px) {
+        justify-content: space-between;
     }
 `;
 
@@ -31,20 +37,96 @@ const NavLinks = styled.ul`
     width: 100%;
     list-style: none;
     float: right;
+    height: 100%;
+
+    @media screen and (max-width: 768px) {
+        display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        position: absolute;
+        top: 40px;
+        background-color: white;
+        z-index: 5;
+        height: ${({ isOpen }) => isOpen ? "100vh" : "0"};
+        transition: all 0.5s ease;
+
+        li {
+            height: 3rem;
+            display: flex;
+            align-items: center;
+
+            a {
+                font-size: 1.2rem;
+            }
+
+            button {
+                font-size: 1.2rem;
+            }
+        }
+    }
+`;
+
+const MenuIcon = styled(MdMenu)`
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        color: black;
+        margin-right: 2rem;
+        cursor: pointer;
+    }
+`;
+
+const CloseIcon = styled(MdClose)`
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        color: black;
+        margin-right: 2rem;
+        cursor: pointer;
+    }
 `;
 
 const NavBar = () => {
-    
+    const [isOpen, setIsOpen] = useState(false);
+    const ref = useRef();
+
+    const handleClick = () => {
+        setIsOpen(prev => !prev);
+    };
+
+    useEffect(() => {
+        const handler = event => {
+            if (isOpen && ref.current && !ref.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handler);
+        document.addEventListener("touchstart", handler);
+        return () => {
+            document.removeEventListener("mousedown", handler);
+            document.removeEventListener("touchstart", handler);
+        };
+    }, [isOpen]);
+
     return (
-        <Wrapper>
+        <Wrapper ref={ref}>
             <TopBar />
             <Content>
-                <NavLinks>
+                <Logo />
+                <NavLinks isOpen={isOpen}>
                     {menuItems.map(menu => {
                         const depthLevel = 0;
-                        return <MenuItems menu={menu} depthLevel={depthLevel} key={uuidv4()} />
-})}
+                        return <MenuItems menu={menu} depthLevel={depthLevel} key={uuidv4()} />;
+                    })}
                 </NavLinks>
+                {isOpen ? <CloseIcon onClick={handleClick}/> : <MenuIcon onClick={handleClick} />}
             </Content>
         </Wrapper>
     );
