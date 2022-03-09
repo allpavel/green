@@ -3,10 +3,9 @@ import Layout from "../components/Layout/Layout";
 
 const AboutPage = () => {
     return (
-        <>
-            <Layout />
+            <Layout>
             <h1>AboutPage</h1>
-        </>
+            </Layout>
     );
 };
 

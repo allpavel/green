@@ -3,26 +3,24 @@ import styled from "styled-components";
 import { FaEnvelope, FaMobile, FaTwitter, FaFacebook, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 
 const Wrapper = styled.section`
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 2rem;
     background-color: var(--additional-color);
-    width: 100%;
+    @media screen and (max-width: 456px) {
+        display: none;
+    }
 `;
 
 const Content = styled.div`
     display: flex;
-    width: 1200px;
     justify-content: space-between;
-    
-    @media screen and (max-width: 1500px) {
-        width: 1000px;
-    }
+    height: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
 
     @media screen and (max-width: 1280px) {
-        width: 600px;
+        max-width: 900px;
     }
+
 `;
 
 const ContactInfo = styled.div`
@@ -36,7 +34,7 @@ const ContactInfo = styled.div`
     }
 
     svg {
-        margin-left: 1rem;
+        margin-left: 2rem;
         margin-right: 0.2rem;
         color: var(--main-color);
     }
@@ -45,7 +43,7 @@ const ContactInfo = styled.div`
 const SocialLinks = styled.div`
     display: flex;
     align-items: center;
-    margin-right: 1rem;
+    margin-right: 2rem;
     svg {
         margin-left: 0.5rem;
         color: grey;

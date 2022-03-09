@@ -7,13 +7,12 @@ import Clients from "../components/Clients/Clients";
 
 const HomePage = () => {
     return (
-        <>
-            <Layout />
+        <Layout>
             <Hero />
             <FeaturedServices />
             <WhyUs />
             <Clients />
-        </>
+        </Layout>
     );
 };
 

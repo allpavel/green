@@ -60,18 +60,6 @@ const MenuItems = ({ menu, depthLevel }) => {
         setIsDropdown(prev => !prev);
     };
 
-    const handleMouseEnter = () => {
-        if (window.innerWidth > 960) {
-            setIsDropdown(true);
-        }
-    };
-
-    const handleMouseLeave = () => {
-        if (window.innerWidth > 960) {
-            setIsDropdown(false);
-        }
-    };
-
     useEffect(() => {
         const handler = event => {
             if (isDropdown && ref.current && !ref.current.contains(event.target)) {
@@ -87,7 +75,7 @@ const MenuItems = ({ menu, depthLevel }) => {
     }, [isDropdown]);
 
     return (
-        <NavItem ref={ref} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <NavItem ref={ref}>
             {menu.submenu ? (
                 <>
                     <button

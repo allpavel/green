@@ -14,6 +14,7 @@ const Wrapper = styled.section`
 const Content = styled.div`
     margin: 1rem 0;
     text-align: center;
+    padding: 0 2rem;
 
     h2 {
         text-transform: uppercase;
@@ -37,10 +38,21 @@ const Clients = () => {
                 tag="div"
                 loop={true}
                 pagination={{ clickable: true }}
-                slidesPerView={4}
+                slidesPerView={2}
                 centeredSlides={true}
-                spaceBetween={100}
+                spaceBetween={30}
+                autoHeight={true}
                 autoplay={{ delay: 1500, disableOnInteraction: false }}
+                breakpoints={{
+                    480: {
+                        slidesPerView: 3,
+                        spaceBetween: 60,
+                    },
+                    640: {
+                        slidesPerView: 4,
+                        spaceBetween: 100,
+                    },
+                }}
             >
                 <SwiperSlide>
                     <StaticImage src="../../images/clients/client-1.png" alt="slide-1" />
