@@ -9,7 +9,7 @@ const Wrapper = styled.section`
 
 const Container = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(23.75rem, 1fr));;
+    grid-template-columns: repeat(auto-fill, minmax(23.75rem, 1fr));
     max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
