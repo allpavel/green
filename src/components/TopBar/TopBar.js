@@ -5,7 +5,7 @@ import { FaEnvelope, FaMobile, FaTwitter, FaFacebook, FaInstagramSquare, FaLinke
 const Wrapper = styled.section`
     height: 2rem;
     background-color: var(--additional-color);
-    @media screen and (max-width: 456px) {
+    @media screen and (max-width: 520px) {
         display: none;
     }
 `;

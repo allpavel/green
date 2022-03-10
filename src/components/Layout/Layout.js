@@ -1,5 +1,5 @@
 import React from "react";
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 
@@ -17,7 +17,6 @@ const GlobalStyles = createGlobalStyle`
 
     body, html {
         font-family: "Open Sans", sans-serif;
-        height: 100%;
         overflow-x: hidden;
 
     }
@@ -28,7 +27,7 @@ const Layout = ({ children }) => {
         <>
             <GlobalStyles />
             <NavBar />
-            <main>{children}</main>
+            {children}
             <Footer />
         </>
     );
