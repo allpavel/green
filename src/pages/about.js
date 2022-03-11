@@ -14,7 +14,7 @@ const Wrapper = styled.main`
 
 const Heading = styled.article`
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
 
     h1 {
         text-transform: uppercase;
