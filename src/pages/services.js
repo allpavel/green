@@ -10,6 +10,7 @@ const Wrapper = styled.main`
 
 const Title = styled.section`
     text-align: center;
+    margin-top: 2rem;
     h1 {
         text-transform: uppercase;
         font-size: 2rem;
