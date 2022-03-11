@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout/Layout";
+import Team from "../components/Team/Team";
 
 const Wrapper = styled.main`
     display: flex;
@@ -36,13 +37,13 @@ const Content = styled.article`
 `;
 
 const Text = styled.div`
-h2 {
-    padding: 1rem 2rem;
-}
+    h2 {
+        padding: 1rem 2rem;
+    }
 `;
 
 const Image = styled.div`
-padding: 1rem 2rem;
+    padding: 1rem 2rem;
 `;
 
 const AboutPage = () => {
@@ -86,6 +87,7 @@ const AboutPage = () => {
                         <StaticImage src="../images/about.jpg" alt="about us image" />
                     </Image>
                 </Content>
+                <Team />
             </Wrapper>
         </Layout>
     );
