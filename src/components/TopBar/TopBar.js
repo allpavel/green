@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { FaEnvelope, FaMobile, FaTwitter, FaFacebook, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaMobile } from "react-icons/fa";
+import Links from "../SocialLinks/SocialLinks";
 
 const Wrapper = styled.section`
     height: 2rem;
     background-color: var(--additional-color);
-    @media screen and (max-width: 520px) {
+    @media screen and (max-width: 535px) {
         display: none;
     }
 `;
@@ -40,21 +41,6 @@ const ContactInfo = styled.div`
     }
 `;
 
-const SocialLinks = styled.div`
-    display: flex;
-    align-items: center;
-    margin-right: 2rem;
-    svg {
-        margin-left: 0.5rem;
-        color: grey;
-        transition: all 0.4s ease-out;
-    }
-
-    svg:hover {
-        color: var(--main-color);
-        cursor: pointer;
-    }
-`;
 
 const TopBar = () => {
     return (
@@ -66,12 +52,7 @@ const TopBar = () => {
                     <FaMobile />
                     <span>+ 1 234 567 8909</span>
                 </ContactInfo>
-                <SocialLinks>
-                    <FaTwitter />
-                    <FaFacebook />
-                    <FaInstagramSquare />
-                    <FaLinkedin />
-                </SocialLinks>
+                <Links />
             </Content>
         </Wrapper>
     );
