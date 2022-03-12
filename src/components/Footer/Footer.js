@@ -7,6 +7,7 @@ const Wrapper = styled.footer`
     color: white;
     text-align: center;
     padding: 2rem 0;
+    min-height: 251px;
     h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
