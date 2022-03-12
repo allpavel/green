@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout/Layout";
 import Team from "../components/Team/Team";
+import Seo from "../components/SEO/SEO";
 
 const Wrapper = styled.main`
     display: flex;
@@ -49,6 +50,7 @@ const Image = styled.div`
 const AboutPage = () => {
     return (
         <Layout>
+            <Seo title={"About"} description={"Land day. There grass evening fish living green which moving."} />
             <Wrapper>
                 <Heading>
                     <h1>About Us</h1>

@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 
@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
     body, html {
         font-family: "Open Sans", sans-serif;
         overflow-x: hidden;
+        height: 100%;
 
     }
 `;

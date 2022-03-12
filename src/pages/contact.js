@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BsGeoAlt, BsPhone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import Layout from "../components/Layout/Layout";
+import Seo from "../components/SEO/SEO";
 
 const Wrapper = styled.main`
     max-width: 1140px;
@@ -140,6 +141,7 @@ button {
 const Contact = () => {
     return (
         <Layout>
+            <Seo title="Contact" description={"Yielding. Fifth is Of fruitful bring cattle saw likeness given"} />
             <Wrapper>
                 <Title>
                     <h1>Contact</h1>
@@ -170,7 +172,8 @@ const Contact = () => {
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792.4638445820358!2d-122.07824997074735!3d37.39325229873943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb731497de027%3A0x4d1e9418b1979d37!2zMTEyIFZpZXcgU3QsIE1vdW50YWluIFZpZXcsIENBIDk0MDQxLCDQodCo0JA!5e0!3m2!1sru!2sru!4v1647012632373!5m2!1sru!2sru"
                             width="100%"
                             height="290"
-                            allowfullscreen=""
+                            allowFullScreen=""
+                            title="Google Map with our location"
                             loading="lazy"
                         ></iframe>
                     </ContactInfo>
@@ -178,16 +181,16 @@ const Contact = () => {
                         <Contacts>
                             <div>
                                 <label htmlFor="name">Your Name</label>
-                                <input id="name" type="text" required autoComplete="off" />
+                                <input id="name" name="name" type="text" required autoComplete="off" />
                             </div>
                             <div>
-                                <label htmlFor="name">Your Email</label>
-                                <input id="email" type="text" required autoComplete="off" />
+                                <label htmlFor="email">Your Email</label>
+                                <input id="email" name="email" type="text" required autoComplete="off" />
                             </div>
                         </Contacts>
                         <Subject>
-                            <label htmlFor="name">Subject</label>
-                            <input id="name" type="text" required autoComplete="off" />
+                            <label htmlFor="subject">Subject</label>
+                            <input id="subject" name="subject" type="text" required autoComplete="off" />
                         </Subject>
                         <TextArea>
                             <label htmlFor="message">Your Message</label>
