@@ -6,6 +6,7 @@ import MenuItems from "../MenuItems/MenuItems";
 import TopBar from "../TopBar/TopBar";
 import Logo from "../Logo/Logo";
 import { menuItems } from "../MenuItems/menuItemsList";
+import NewMobileMenu from "../NewMobileMenu/NewMobileMenu";
 
 const Wrapper = styled.header`
     width: 100%;
@@ -40,7 +41,9 @@ const NavLinks = styled.ul`
     height: 100%;
 
     @media screen and (max-width: 768px) {
-        display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+        display: none;
+        /* opacity: ${({ isOpen }) => isOpen ? "1" : "0"};
+        height: ${({ isOpen }) => isOpen ? "100vh" : "0"};
         flex-direction: column;
         justify-content: start;
         align-items: center;
@@ -48,8 +51,7 @@ const NavLinks = styled.ul`
         top: 40px;
         background-color: white;
         z-index: 5;
-        height: ${({ isOpen }) => isOpen ? "100vh" : "0"};
-        transition: all 0.5s ease;
+        transition: all 0.3s ease-in-out;
 
         li {
             height: 3rem;
@@ -63,7 +65,7 @@ const NavLinks = styled.ul`
             button {
                 font-size: 1.2rem;
             }
-        }
+        } */
     }
 `;
 
@@ -127,6 +129,7 @@ const NavBar = () => {
                     })}
                 </NavLinks>
                 {isOpen ? <CloseIcon onClick={handleClick}/> : <MenuIcon onClick={handleClick} />}
+                <NewMobileMenu isOpen={isOpen} />
             </Content>
         </Wrapper>
     );

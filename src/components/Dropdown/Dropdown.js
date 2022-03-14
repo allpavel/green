@@ -21,6 +21,13 @@ const Wrapper = styled.ul`
         left: ${({ depthLevel }) => depthLevel > 1 ? "-140%" : "auto"};     
     }
 
+    @media screen and (max-width: 768px) {
+        width: 10rem;
+        top: ${({ depthLevel }) => depthLevel > 1 ? "-100%" : "-100%"};
+        left: ${({ depthLevel }) => depthLevel > 1 ? "-1rem" : "0"};
+    }
+
+
 `;
 
 

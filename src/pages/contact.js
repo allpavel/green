@@ -28,7 +28,7 @@ const Title = styled.article`
 const Content = styled.article`
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     margin-bottom: 2rem;
 `;
 

@@ -30,7 +30,7 @@ const Heading = styled.article`
 const Content = styled.article`
     margin: 1rem 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 
     p {
         padding: 1rem 2rem;
