@@ -24,9 +24,11 @@ const Wrapper = styled.nav`
     }
 
     a {
-        margin: 2rem 0;
+        width: 100%;
+        margin: 1.5rem 0;
         text-decoration: none;
         text-transform: uppercase;
+        text-align: center;
         font-size: 1.2rem;
         color: #000;
         transition: all 0.5s ease;
@@ -43,19 +45,34 @@ const Wrapper = styled.nav`
 
 const Dropdown = styled.div`
     position: relative;
+    width: 100%;
     label {
-        margin: 2rem 0;
+        margin: 1.5rem 0;
         text-decoration: none;
         text-transform: uppercase;
         font-size: 1.2rem;
-        width: 100%;
-        display: block;
         z-index: 3;
         position: relative;
+        transition: all .4s ease;
     }
 
     li {
+        color: #000;
         list-style: none;
+        text-align: right;
+        font-size: 1.2rem;
+        margin: 0 1rem 1rem;
+        transition: all .4s ease;
+    }
+
+    li:hover {
+        color: #0abf19;
+    }
+
+    li label {
+        margin: 0 0;
+        text-transform: lowercase;
+        font-size: 1.2rem;
     }
 
     label:hover {
@@ -72,17 +89,26 @@ const Dropdown = styled.div`
         display: block;
     }
 
+    input:checked + div svg {
+        transform: rotate(0deg);
+        transition: .2s;
+    }
+
     div {
         display: flex;
         align-items: center;
+        justify-content: center;
     }
 `;
 
 const Arrow = styled(MdArrowDropDown)`
-    width: 1rem;
-    height: 1rem;
+    position: relative;
+    left: 6px;
+    width: 2rem;
+    height: 2rem;
     vertical-align: middle;
-    float: left;
+    transform: rotate(-90deg);
+    transition: .2s;
     z-index: 0;
 `;
 
@@ -106,16 +132,18 @@ const NewMobileMenu = ({ isOpen }) => {
                 </div>
                 <ul>
                     <li>menu 1</li>
-                    <li>menu 1</li>
-                    <li>menu 1</li>
+                    <li>menu 2</li>
+                    <li>menu 3</li>
                     <li>
-                        <Arrow />
                         <input type="checkbox" id="F" />
-                        <label htmlFor="F">Submenu</label>
+                        <div>
+                            <Arrow />
+                            <label htmlFor="F">Submenu</label>
+                        </div>
                         <ul>
-                            <li>Submenu 1</li>
-                            <li>Submenu 1</li>
-                            <li>Submenu 1</li>
+                            <li>menu 1</li>
+                            <li>menu 2</li>
+                            <li>menu 3</li>
                         </ul>
                     </li>
                 </ul>
