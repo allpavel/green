@@ -25,9 +25,13 @@ const Title = styled.section`
 
 const Items = styled.section`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
     gap: 2rem;
     margin: 2rem 2rem;
+
+    @media screen and (max-width: 320px) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 const Content = styled.div`
@@ -46,6 +50,14 @@ const Content = styled.div`
 
     :hover div svg:last-child path {
         fill: white;
+    }
+
+    @media screen and (max-width: 943px) {
+        padding: 2rem 1rem;
+    }
+
+    @media screen and (max-width: 639px) {
+        padding: 2rem 3rem;
     }
 `;
 

@@ -22,7 +22,7 @@ const Title = styled.article`
 const TeamGalery = styled.article`
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     margin: 2rem 2rem;
 `;
 
@@ -31,7 +31,7 @@ const TeamItem = styled.div`
     flex-direction: column;
     align-items: center;
     box-shadow: 0px 0px 12px 0px rgba(34, 34, 34, 0.07);
-    padding: 2rem 1.5rem;
+    padding: 2rem 1rem;
 
     img {
         border-radius: 50%;

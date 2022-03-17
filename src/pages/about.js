@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout/Layout";
 import Team from "../components/Team/Team";
 import Seo from "../components/SEO/SEO";
+import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 
 const Wrapper = styled.main`
     display: flex;
@@ -91,6 +92,7 @@ const AboutPage = () => {
                 </Content>
                 <Team />
             </Wrapper>
+            <ScrollToTop />
         </Layout>
     );
 };
