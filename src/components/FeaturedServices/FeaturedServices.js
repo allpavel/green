@@ -9,19 +9,17 @@ const Wrapper = styled.section`
 
 const Container = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(23.75rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
     max-width: 1140px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 `;
 
 const Content = styled.div`
     padding: 1rem 2rem;
-    
     svg {
         width: 3rem;
         height: auto;
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.3rem;
     }
 
     h2 {

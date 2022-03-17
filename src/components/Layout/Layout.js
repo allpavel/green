@@ -17,9 +17,7 @@ const GlobalStyles = createGlobalStyle`
 
     body, html {
         font-family: "Open Sans", sans-serif;
-        overflow-x: hidden;
-        height: 100%;
-
+        max-width: 100%;
     }
 `;
 

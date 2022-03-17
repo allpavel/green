@@ -5,7 +5,7 @@ const Wrapper = styled.section`
     display: grid;
     max-width: 1140px;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(23.75rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
